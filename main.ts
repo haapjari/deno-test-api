@@ -1,4 +1,11 @@
-// @deno-types="npm:@types/express@4"
-import express, { NextFunction, Request, Response } from "npm:express";
+// import express from "npm:express@^4.18";
+import express from "https://esm.sh/express@4.18.2"
 
-console.log("hello world");
+const app = express();
+
+app.get("/", function (req: Request, res: Response) {
+    res.send("Hello World!");
+})
+
+app.listen(3000);
+console.log("listening on 3000 ...")
